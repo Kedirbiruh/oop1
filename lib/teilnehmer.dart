@@ -20,8 +20,11 @@ class Teilnehmer {
     }
     if (abschlussnote!= null) {
       print("Ich habe $abschlussnote.");
+    }
+    if (status != null) {
+    print("Status: $status");
     }else {
-      print("Noch keine $abschlussnote");
+      print("Noch keine Abschlussnote");
     }
   }
 }
