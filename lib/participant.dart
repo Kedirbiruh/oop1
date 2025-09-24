@@ -23,7 +23,7 @@ class Participant {
       print("Ich wiege ${weight} kg und bin ${height} m.");
     }
     if (grade != null) {
-      print("Ich habe $grade.");
+      print("Meine Abschlussnote ist $grade.");
     }
     if (status != null) {
       print("Status: $status");
