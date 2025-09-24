@@ -1,11 +1,12 @@
-import 'package:oop1/teilnehmer.dart' as oop1;
+import '../lib/participant.dart';
 
 void main () {
-  var t1 = oop1.Teilnehmer("Abel", 35, gewicht: 80.0, groesse: 1.70, status: "aktiv", abschlussnote:1.3);
-  var t2 = oop1.Teilnehmer("Sahra", 19, groesse: 1.75, );
+  var t1 = Participant("Abel", 35, weight: 80.0, height: 1.70, status: "aktiv", grade:1.3);
+  var t2 = Participant("Sahra", 19, height: 1.75, );
 
-  print("Teilnehmer 1");
-  t1.info();
-  print("Teilnehmer 2");
-  t2.info();
+  print("Participant 1");
+  t1.introduction();
+  print("Participant 2");
+  t2.introduction();
+
 }
