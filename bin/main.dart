@@ -1,4 +1,4 @@
-import '../lib/participant.dart';
+import 'package:oop1/participant.dart';
 
 void main () {
   var t1 = Participant("Abel", 35, weight: 80.0, height: 1.70, status: "aktiv", grade:1.3);
