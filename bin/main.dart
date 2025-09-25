@@ -1,12 +1,29 @@
+import 'dart:io';
+
 import 'package:oop1/participant.dart';
 
-void main () {
-  var t1 = Participant("Abel", 35, weight: 80.0, height: 1.70, status: "aktiv", grade:1.3);
-  var t2 = Participant("Sahra", 19, height: 1.75, );
+void main() {
+  var t1 = Participant(
+    firstName: 'Abel',
+    lastName: 'Müller',
+    age: 30,
+    birthDate: DateTime(2000, 6, 9),
+    finalGrade: 1.3,
+    status: 'student',
+  );
 
-  print("Participant 1");
-  t1.introduction();
-  print("Participant 2");
-  t2.introduction();
+  var t2 = Participant(
+    firstName: 'Sahra', 
+    lastName: 'Sadiq');
 
+  var t3 = Participant(
+    firstName: 'Kai',
+    lastName: 'Raucher',
+    finalGrade: 2.3,
+    // finalGrade: 10.0,
+  );
+
+  t1.printInfo();
+  t2.printInfo();
+  print(t3);
 }

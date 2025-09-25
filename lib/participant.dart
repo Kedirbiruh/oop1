@@ -1,34 +1,43 @@
 class Participant {
-  String name;
+  String firstName;
+  String lastName;
   int age;
-  DateTime? birthday;
-  double? grade;
+  DateTime? birthDate;
+  double? finalGrade;
   double? weight;
   double? height;
   String? status;
 
-  Participant(
-    this.name,
-    this.age, {
-    this.birthday,
-    this.grade,
-    this.weight,
-    this.height,
-    this.status,
-  });
 
-  void introduction() {
-    print("Hi, ich heiße $name, bin $age Jahre alt.");
-    if (weight != null && height != null) {
-      print("Ich wiege ${weight} kg und bin ${height} m.");
+  Participant(double d, {required this.firstName, required this.lastName, required this.age, 
+  this.birthDate, this.finalGrade, 
+  this.weight, this.height,  this.status ='Aktiv',});
+
+
+// Getter: zusammengesetzter Wert
+  String get fullName => '$firstName $lastName';
+
+  // Beispiel-Setter mit Validierung (optional)
+  set grade(double? value) {
+    if(value != null && (value < 0 || value > 6)) {
+      throw ArgumentError('Note muss zwischen 0 und 6 liegen');
     }
-    if (grade != null) {
-      print("Meine Abschlussnote ist $grade.");
-    }
-    if (status != null) {
-      print("Status: $status");
-    } else {
-      print("Noch keine Abschlussnote");
-    }
+    finalGrade = value;
   }
+
+  void printInfo() {
+    print('Name: $fullName');
+    print('Status: $status');
+    print('Alter: $age ? "nicht angegeben"');
+    print('Geburtstag: ${birthDate?.toIso8601String()?? "nicht angegeben"}');
+    print('Abschlussnote: ${finalGrade?.toStringAsFixed(2) ?? "nicht vorhanden"}');
+    print("Hi, ich heiße $firstName, bin $age Jahre alt.");
+  }
+
+  @override
+  String toString() {
+    return 'Teilnehmer(fullName: $fullName, role: $status, age: ${age ?? "?"})';
+  }
+
+
 }
