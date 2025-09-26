@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:oop1/participant.dart';
 
 void main() {
@@ -12,14 +11,13 @@ void main() {
     status: 'student',
   );
 
-  var t2 = Participant(
-    firstName: 'Sahra', 
-    lastName: 'Sadiq');
+  var t2 = Participant(firstName: 'Sahra', lastName: 'Sadiq',  age: 25,);
 
   var t3 = Participant(
     firstName: 'Kai',
     lastName: 'Raucher',
     finalGrade: 2.3,
+    age: 28,
     // finalGrade: 10.0,
   );
 
